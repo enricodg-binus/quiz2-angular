@@ -1,0 +1,65 @@
+<app-nav></app-nav>
+
+<div *ngFor="let _data of data.data">
+  <table>
+    <thead>
+
+    </thead>
+    <tbody>
+    <tr>
+      <td>{{ _data.id }}. </td>
+      <td>{{ _data.name }}</td>
+      <td>&nbsp;&nbsp;{{ _data.price }}</td>
+      <td>&nbsp;&nbsp;{{ _data.stock }}</td>
+      <td>
+        <button (click)="deleteItem(_data.id)">   Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<br><br>
+<form>
+  <div class="form-group">
+    <label>Category ID: </label>
+    <input type="text" name="name" id="catid" required="required" tabindex="1" class="form-control" placeholder="Category ID" [(ngModel)]="model.catid" #catid="ngModel">
+  </div>
+  <div class="form-group">
+    <label>Name: </label>
+    <input type="text" name="name" id="name" required="required" tabindex="1" class="form-control" placeholder="Item Name" [(ngModel)]="model.name" #name="ngModel">
+  </div>
+  <div class="form-group">
+    <label>Price: </label>
+    <input type="number" name="price" required="required" tabindex="1" class="form-control" placeholder="Price" [(ngModel)]="model.price" #price="ngModel">
+  </div>
+  <div class="form-group">
+    <label>Stock: </label>
+    <input type="number" name="stock" required="required" tabindex="1" class="form-control" placeholder="Stock" [(ngModel)]="model.stock" #stock="ngModel">
+    <button (click)="addItem(model.name, model.price, model.stock, model.catid)">Add</button>
+  </div>
+</form>
+<br>
+<br>
+<form>
+  <div class="form-group">
+    <label>ID: </label>
+    <input type="text" name="id" required="required" tabindex="1" class="form-control" placeholder="ID" [(ngModel)]="model.id" #id="ngModel">
+  </div>
+  <div class="form-group">
+    <label>Category ID: </label>
+    <input type="text" name="name" id="catid2" required="required" tabindex="1" class="form-control" placeholder="Category ID" [(ngModel)]="model.catid2" #catid2="ngModel">
+  </div>
+  <div class="form-group">
+    <label>Name: </label>
+    <input type="text" name="_name" required="required" tabindex="1" class="form-control" placeholder="Category Name" [(ngModel)]="model.name2" #name2="ngModel">
+  </div>
+  <div class="form-group">
+    <label>Price: </label>
+    <input type="number" name="price" required="required" tabindex="1" class="form-control" placeholder="Price" [(ngModel)]="model.price2" #price2="ngModel">
+  </div>
+  <div class="form-group">
+    <label>Stock: </label>
+    <input type="number" name="stock" required="required" tabindex="1" class="form-control" placeholder="Stock" [(ngModel)]="model.stock2" #stock2="ngModel">
+    <button (click)="updateItem(model.id, model.name2, model.price2, model.stock2, model.catid2)">Update</button>
+  </div>
+</form>

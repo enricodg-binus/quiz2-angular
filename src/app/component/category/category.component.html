@@ -1,0 +1,39 @@
+<app-nav></app-nav>
+
+<div *ngFor="let _data of data.data">
+  <table>
+    <thead>
+
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ _data.id }}. </td>
+        <td>{{ _data.name }}</td>
+        <td>
+          <button (click)="deleteCategory(_data.id)">   Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br><br>
+<form>
+  <div class="form-group">
+    <label>Name: </label>
+    <input type="text" name="name" id="name" required="required" tabindex="1" class="form-control" placeholder="Category Name" [(ngModel)]="model.name" #name="ngModel">
+    <button (click)="addCategory(model.name)">Add</button>
+  </div>
+</form>
+<br>
+<br>
+<form>
+  <div class="form-group">
+    <label>ID: </label>
+    <input type="text" name="id" required="required" tabindex="1" class="form-control" placeholder="ID" [(ngModel)]="model.id" #id="ngModel">
+  </div>
+  <div class="form-group">
+    <label>Name: </label>
+    <input type="text" name="_name" required="required" tabindex="1" class="form-control" placeholder="Category Name" [(ngModel)]="model.name2" #name2="ngModel">
+    <button (click)="updateCategory(model.id, model.name2)">Update</button>
+  </div>
+</form>
